@@ -4,12 +4,12 @@ global.dfail('admin', m, conn)
 throw false
 }
 let pesan = args.join` `
-let oi = `*𝙈𝙚𝙣𝙨𝙖𝙟𝙚:* ${pesan}`
-let teks = `*⺀ ＡＣＴＩＶＥ ＧＲＵＰＯ 🗣️⺀*
+let oi = `*Сообщение:* ${pesan}`
+let teks = `*⺀ ВНИМАНИЕ ГРУППА 🗣️⺀*
 
 ❏ ${oi}
 
-❏ *𝙀𝙩𝙞𝙦𝙪𝙚𝙩𝙖𝙨:*
+❏ *УЧАСТНИКИ:*
 `
 for (let mem of participants) {
 teks += `➥ @${mem.id.split('@')[0]}\n`}
@@ -18,7 +18,7 @@ conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, 
 }
 handler.help = ['tagall <mesaje>','invocar <mesaje>']
 handler.tags = ['group']
-handler.command = /^(tagall|invocar|invocacion|todos|invocación)$/i
+handler.command = /^(tagall|invocar|invocacion|внимание|invocación)$/i
 handler.admin = true
 handler.group = true
 handler.botAdmin = true
